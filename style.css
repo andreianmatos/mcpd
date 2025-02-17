@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%; /* Garantir que ocupe toda a largura */
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse; /* Manter ordem reversa */
+    justify-content: flex-start;
+    position: relative;
+    flex-grow: 1;
+}
+
+.input-area {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1); /* Barra de input transparente */
+    border-radius: 8px;
+    width: 100%;
+    position: fixed;
+    top: 0; /* Barra no topo */
+    z-index: 10; /* Barra fica acima do histórico */
+}
+
+textarea {
+    width: 40%;
+    height: 80px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo do campo de input para maior legibilidade */
+}
+
+button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#scroll-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    width: 100%; /* Garantir 100% de largura */
+    position: relative; /* Para que as mensagens se posicionem corretamente */
+    margin-top: 80px; /* Espaço para a barra de input */
+    padding-top: 10px; /* Ajuste do padding para manter rolagem correta */
+    height: calc(100vh - 80px); /* Subtrai a altura da barra de input */
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: rgba(241, 241, 241, 0.7); /* Fundo da mensagem com transparência */
+    border-radius: 5px;
+    position: absolute; /* Para permitir o posicionamento vertical e horizontal aleatório */
+    width: auto;
+    max-width: 80%; /* Limitando a largura das mensagens */
+    opacity: 0.9; /* Transparência da mensagem */
+}
+
+.message img {
+    max-width: 100%;
+    border-radius: 5px;
+    opacity: 0.7; /* Transparência para imagens */
+}
